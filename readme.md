@@ -36,5 +36,5 @@ Go on the project's root folder, then type:
 - **Popular stations:** returns the id of the most popular station in “month”. Popularity is a function of the usage of the station 
     - `/stats/monthly/popular/{month}`   
 
-### TODOs
+### Todo
 - Add tests
