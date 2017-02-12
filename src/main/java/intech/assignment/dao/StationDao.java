@@ -20,6 +20,9 @@ public interface StationDao extends CrudRepository<Station, Integer> {
 			+ "station_id from station_stats where month = :month group by station_id) t3 where bike_rides = (select max(bike_rides) "
 			+ "as bike_rides from ( select * from (select sum(bike_rides) as bike_rides, station_id from station_stats where month = :month "
 			+ "group by station_id) t1 ) t2 ));", nativeQuery = true)
+	/*
+	 * Popularity is determined by bike rides
+	 */
 	public List<Station> getPopularStationByMonth(@Param("month") Integer month);
 }
 

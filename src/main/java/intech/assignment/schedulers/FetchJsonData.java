@@ -21,6 +21,9 @@ import intech.assignment.feed.models.StationsFeed;
 import intech.assignment.services.StationDetailService;
 import intech.assignment.services.StationService;
 
+/*
+ * Fetches JSON data via REST apis and update cahce and DB
+ */
 @Component
 public class FetchJsonData {
 

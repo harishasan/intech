@@ -9,8 +9,12 @@ import org.springframework.stereotype.Component;
 
 import intech.assignment.dao.StationStatsDao;
 
+/*
+ * Aggregates bike data(rides and disability), for each station, on monthly basis
+ * using a stored procedure 
+ */
 @Component
-public class AggregateBikeUsage {
+public class AggregateBikeDataByStation {
 	
 	@Autowired
 	private StationStatsDao stationStatsDao;
