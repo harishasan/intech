@@ -1,20 +1,20 @@
 ## NYC bicycle statistics using MySQL, Spring Boot, Spring Data, REST APIs
 
-#### Configurations
+### Configurations
 
 Open the `application.properties` file and set your own configurations.
 
-#### Prerequisites
+### Prerequisites
 
 - Java 8
 - Maven > 3.0
 - MySQL
 
-#### Setup DB
+### Setup DB
 Download source code and run
 	`mysql -u username -p < root_dir/src/main/resources/db_script.sql`
 
-#### Run
+### Run
 
 Go on the project's root folder, then type:
     `$ mvn spring-boot:run`
