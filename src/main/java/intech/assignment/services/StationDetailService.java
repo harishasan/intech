@@ -106,7 +106,7 @@ public class StationDetailService {
 						stationStatsService.update(stationDetail, existing);
 					}
 					
-					System.out.println("Station detail has been updated on server: " + existing.getId());
+					System.out.println("Station detail has been updated on server: " + existing.getStationId());
 					// for debugging
 					//stationDetail.equals(existing);
 					stationDetail.setId(existing.getId());

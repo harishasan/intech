@@ -1,9 +1,4 @@
-## Using MySQL in Spring Boot via Spring Data JPA and Hibernate
-
-See here for more informations:
-http://blog.netgloo.com/2014/10/27/using-mysql-in-spring-boot-via-spring-data-jpa-and-hibernate/
-
-### Build and run
+## NYC bicycle statistics using MySQL, Spring Boot, Spring Data, REST APIs
 
 #### Configurations
 
@@ -13,24 +8,29 @@ Open the `application.properties` file and set your own configurations.
 
 - Java 8
 - Maven > 3.0
+- MySQL
 
-#### From terminal
+#### Setup DB
+Download source code and run
+	`mysql -u username -p < root_dir/src/main/resources/db_script.sql`
+
+#### Run
 
 Go on the project's root folder, then type:
+    `$ mvn spring-boot:run`
+### REST APIs
 
-    $ mvn spring-boot:run
-
-#### From Eclipse (Spring Tool Suite)
-
-Import as *Existing Maven Project* and run it as *Spring Boot App*.
-
-
-### Usage
-
-- Run the application and go on http://localhost:8080/
-- Use the following urls to invoke controllers methods and see the interactions
-  with the database:
-    * `/create?email=[email]&name=[name]`: create a new user with an auto-generated id and email and name as passed values.
-    * `/delete?id=[id]`: delete the user with the passed id.
-    * `/get-by-email?email=[email]`: retrieve the id for the user with the passed email address.
-    * `/update?id=[id]&email=[email]&name=[name]`: update the email and the name for the user indentified by the passed id.
+- **Overall stats:** returns the global number of bikes and docks available right now
+    - `/stats/overall-stats`
+- **Station stats:** returns the number of bikes and docks available for “station_id” right now
+    - `/stats/stations/{stationId}`   
+- **Closest station by Lat/Lng:** returns the closest station to the given “latitude” and “longitude”
+    - `/stations/closest-by-lat-long?latitude=XXX&longitude=XXX`   
+- **Closest station by street:** returns the closest station to the given “street_name”
+    - `/stations/closest-by-street?street=XXX`   
+- **Stations with capacity:** returns a list of all stations which have at least “num_bikes” available
+    - `/stations/with-capacity?capacity=XXX`   
+- **Monthly stats:** returns the number of bike rides and disabled bikes for “month”
+    - `/stats/monthly/bike-rides-and-disabled/{month}`   
+- **Popular stations:** returns the id of the most popular station in “month”. Popularity is a function of the usage of the station 
+    - `/stats/monthly/popular/{month}`   
