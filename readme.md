@@ -18,6 +18,7 @@ Download source code and run
 
 Go on the project's root folder, then type:
     `$ mvn spring-boot:run`
+
 ### REST APIs
 
 - **Overall stats:** returns the global number of bikes and docks available right now
@@ -34,3 +35,6 @@ Go on the project's root folder, then type:
     - `/stats/monthly/bike-rides-and-disabled/{month}`   
 - **Popular stations:** returns the id of the most popular station in “month”. Popularity is a function of the usage of the station 
     - `/stats/monthly/popular/{month}`   
+
+### TODOs
+- Add tests
