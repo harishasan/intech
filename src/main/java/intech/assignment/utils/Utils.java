@@ -36,7 +36,7 @@ public class Utils {
 	}
 	
 	public static LatLng findLatitudeLongitude(String place){
-		GeoApiContext context = new GeoApiContext().setApiKey("AIzaSyAGTIBbynAsKWVmWtZ3MN9LRJxmzDelau8");
+		GeoApiContext context = new GeoApiContext().setApiKey("your_api_key");
 		GeocodingResult[] results;
 		try {
 			results = GeocodingApi.geocode(context, place).await();
